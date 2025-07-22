@@ -1,4 +1,4 @@
-This is a dummy description of this app features
+Tool for making HTML presentations with Remark.js using Markdown
 
 ### Features
 
