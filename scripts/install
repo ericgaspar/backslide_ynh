@@ -46,6 +46,16 @@ yunohost service add "$app" --description="A short description of the app" --log
 ynh_config_add_logrotate
 
 #=================================================
+# INSTALL BACKSLIDE
+#=================================================
+ynh_script_progression "Installing the app..."
+
+pushd "$install_dir"
+ 	ynh_hide_warnings ynh_exec_as_app npm install
+ 	ynh_hide_warnings ynh_exec_as_app npm run init -s
+popd
+
+#=================================================
 # START SYSTEMD SERVICE
 #=================================================
 ynh_script_progression "Starting $app's systemd service..."
